@@ -14,7 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      daily_deals: {
+        Row: {
+          buy_link: string | null
+          created_at: string
+          data_amount: string
+          id: string
+          is_featured: boolean | null
+          network: string
+          plan_name: string
+          price: string
+          updated_at: string
+          validity: string
+        }
+        Insert: {
+          buy_link?: string | null
+          created_at?: string
+          data_amount: string
+          id?: string
+          is_featured?: boolean | null
+          network: string
+          plan_name: string
+          price: string
+          updated_at?: string
+          validity: string
+        }
+        Update: {
+          buy_link?: string | null
+          created_at?: string
+          data_amount?: string
+          id?: string
+          is_featured?: boolean | null
+          network?: string
+          plan_name?: string
+          price?: string
+          updated_at?: string
+          validity?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
