@@ -8,7 +8,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Wifi className="w-6 h-6 text-secondary" />
-              <span className="font-heading font-bold text-lg text-background">DataSaverNG</span>
+              <span className="font-heading font-bold text-lg text-background">OGD MOBILE</span>
             </div>
             <p className="text-background/60 text-sm">
               Helping Nigerians save data and money since 2024. Your trusted guide to the cheapest data plans.
