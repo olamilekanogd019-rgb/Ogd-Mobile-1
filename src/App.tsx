@@ -33,14 +33,36 @@ function App() {
         <p>3. Save money every day with exclusive deals.</p>
       </section>
 
+      {/* Affiliate Banner */}
+      <div className="banner-section">
+        <a href="https://sponsor-website.com" target="_blank" rel="noreferrer">
+          <img src="https://via.placeholder.com/300x100.png?text=Special+Offer" alt="Special Offer" />
+        </a>
+      </div>
+
       {/* Data Deals / Affiliate Buttons */}
       <section className="section" id="data-deals">
         <h3>Latest Data Deals</h3>
         <div className="affiliate-buttons">
-          <a href="YOUR_MTN_AFFILIATE_LINK" target="_blank" rel="noreferrer">MTN 1GB for ₦200</a>
-          <a href="YOUR_AIRTEL_AFFILIATE_LINK" target="_blank" rel="noreferrer">Airtel 1GB for ₦180</a>
-          <a href="YOUR_GLO_AFFILIATE_LINK" target="_blank" rel="noreferrer">Glo 1GB for ₦150</a>
-          <a href="YOUR_9MOBILE_AFFILIATE_LINK" target="_blank" rel="noreferrer">9mobile 1GB for ₦170</a>
+          <a href="https://affiliate.mtn.com/buy/1gb?ref=ogdmobile" target="_blank" rel="noreferrer">
+            MTN 1GB for ₦200
+          </a>
+          <a href="https://affiliate.airtel.com/buy/1gb?ref=ogdmobile" target="_blank" rel="noreferrer">
+            Airtel 1GB for ₦180
+          </a>
+          <a href="https://affiliate.glo.com/buy/1gb?ref=ogdmobile" target="_blank" rel="noreferrer">
+            Glo 1GB for ₦150
+          </a>
+          <a href="https://affiliate.9mobile.com/buy/1gb?ref=ogdmobile" target="_blank" rel="noreferrer">
+            9mobile 1GB for ₦170
+          </a>
+        </div>
+
+        {/* Additional Banner inside Data Deals */}
+        <div className="banner-section">
+          <a href="https://another-sponsor.com" target="_blank" rel="noreferrer">
+            <img src="https://via.placeholder.com/300x100.png?text=Data+Special+Offer" alt="Data Special Offer" />
+          </a>
         </div>
       </section>
 
@@ -57,8 +79,19 @@ function App() {
         <h3>Contact & Join</h3>
         <p>Join our community on WhatsApp and Telegram for daily deals.</p>
         <div className="affiliate-buttons">
-          <a href="YOUR_WHATSAPP_GROUP_LINK" target="_blank" rel="noreferrer">Join WhatsApp</a>
-          <a href="YOUR_TELEGRAM_GROUP_LINK" target="_blank" rel="noreferrer">Join Telegram</a>
+          <a href="https://chat.whatsapp.com/example123" target="_blank" rel="noreferrer">
+            Join WhatsApp
+          </a>
+          <a href="https://t.me/example456" target="_blank" rel="noreferrer">
+            Join Telegram
+          </a>
+        </div>
+
+        {/* Banner in Contact */}
+        <div className="banner-section">
+          <a href="https://promo-website.com" target="_blank" rel="noreferrer">
+            <img src="https://via.placeholder.com/300x100.png?text=Join+Our+Promo" alt="Join Our Promo" />
+          </a>
         </div>
       </section>
 
