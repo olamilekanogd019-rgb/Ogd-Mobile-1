@@ -1,147 +1,64 @@
 import React from "react";
 import "./App.css";
 
+// Import banners
+import banner1 from "./assets/images/banner1.png";
+import banner2 from "./assets/images/banner2.png";
+import banner3 from "./assets/images/banner3.png";
+
 function App() {
   return (
-    <div>
+    <div className="App">
       {/* Header */}
-      <header className="header">OGD MOBILE</header>
+      <header className="App-header">
+        <h1>Welcome to OGD MOBILE</h1>
+        <p>Get the latest data deals and special offers!</p>
+      </header>
 
-      {/* Navigation */}
-      <nav className="nav">
-        <a href="#how-it-works">How It Works</a>
-        <a href="#data-deals">Data Deals</a>
-        <a href="#tips">Tips</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="hero">
-        <h2>Save Data, Save Money!</h2>
-        <p>Get the best data plans in Nigeria with OGD MOBILE. Easy, fast, and reliable.</p>
-        <div className="cta">
-          <a href="#data-deals">Get Data Deals</a>
-          <a href="#tips">Learn Tips</a>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="section" id="how-it-works">
-        <h3>How OGD MOBILE Works</h3>
-        <p>1. Browse affordable data plans from MTN, Airtel, Glo, and 9mobile.</p>
-        <p>2. Click the “Buy Now” buttons to purchase through our secure affiliate links.</p>
-        <p>3. Save money every day with exclusive deals.</p>
-      </section>
-
-      {/* Banner Above Data Deals */}
-      <div className="banner-section">
+      {/* Banner Section */}
+      <section className="banners">
+        {/* Banner 1 */}
         <a
-          href="https://example.com/sponsor1"
+          href="YOUR_MTN_AFFILIATE_LINK"
           target="_blank"
           rel="noreferrer"
         >
-          <img
-            src="https://via.placeholder.com/300x100.png?text=Special+Offer"
-            alt="Special Offer"
-          />
+          <img src={banner1} alt="Special Offer" />
         </a>
-      </div>
+
+        {/* Banner 2 */}
+        <a
+          href="YOUR_AIRTEL_AFFILIATE_LINK"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={banner2} alt="Data Special Offer" />
+        </a>
+
+        {/* Banner 3 */}
+        <a
+          href="YOUR_GLO_AFFILIATE_LINK"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img src={banner3} alt="Join Our Promo" />
+        </a>
+      </section>
 
       {/* Data Deals Section */}
-      <section className="section" id="data-deals">
-        <h3>Latest Data Deals</h3>
-        <div className="affiliate-buttons">
-          <a
-            href="https://affiliate.mtn.com/buy/1gb?ref=ogdmobile"
-            target="_blank"
-            rel="noreferrer"
-          >
-            MTN 1GB for ₦200
-          </a>
-          <a
-            href="https://affiliate.airtel.com/buy/1gb?ref=ogdmobile"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Airtel 1GB for ₦180
-          </a>
-          <a
-            href="https://affiliate.glo.com/buy/1gb?ref=ogdmobile"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Glo 1GB for ₦150
-          </a>
-          <a
-            href="https://affiliate.9mobile.com/buy/1gb?ref=ogdmobile"
-            target="_blank"
-            rel="noreferrer"
-          >
-            9mobile 1GB for ₦170
-          </a>
-        </div>
-
-        {/* Banner inside Data Deals */}
-        <div className="banner-section">
-          <a
-            href="https://example.com/sponsor2"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src="https://via.placeholder.com/300x100.png?text=Data+Special+Offer"
-              alt="Data Special Offer"
-            />
-          </a>
-        </div>
-      </section>
-
-      {/* Tips Section */}
-      <section className="section" id="tips">
-        <h3>Data-Saving Tips</h3>
-        <p>💡 Turn off background apps to save mobile data.</p>
-        <p>💡 Use Wi-Fi whenever possible for large downloads.</p>
-        <p>💡 Monitor your daily usage to avoid overspending.</p>
-      </section>
-
-      {/* Contact Section */}
-      <section className="section" id="contact">
-        <h3>Contact & Join</h3>
-        <p>Join our community on WhatsApp and Telegram for daily deals.</p>
-        <div className="affiliate-buttons">
-          <a
-            href="https://chat.whatsapp.com/example123"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Join WhatsApp
-          </a>
-          <a
-            href="https://t.me/example456"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Join Telegram
-          </a>
-        </div>
-
-        {/* Banner in Contact */}
-        <div className="banner-section">
-          <a
-            href="https://example.com/sponsor3"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src="https://via.placeholder.com/300x100.png?text=Join+Our+Promo"
-              alt="Join Our Promo"
-            />
-          </a>
-        </div>
+      <section className="data-deals">
+        <h2>Latest Data Deals</h2>
+        <ul>
+          <li>MTN 1GB - <a href="YOUR_MTN_AFFILIATE_LINK">Buy Now</a></li>
+          <li>Airtel 2GB - <a href="YOUR_AIRTEL_AFFILIATE_LINK">Buy Now</a></li>
+          <li>Glo 500MB - <a href="YOUR_GLO_AFFILIATE_LINK">Buy Now</a></li>
+        </ul>
       </section>
 
       {/* Footer */}
-      <footer className="footer">&copy; 2026 OGD MOBILE. All rights reserved.</footer>
+      <footer className="App-footer">
+        <p>&copy; 2026 OGD MOBILE. All rights reserved.</p>
+      </footer>
     </div>
   );
 }
