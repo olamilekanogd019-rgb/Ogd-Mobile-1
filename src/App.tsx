@@ -17,13 +17,13 @@ const App: React.FC = () => {
 
       {/* Banner Section */}
       <section className="banners">
-        <a href="YOUR_MTN_AFFILIATE_LINK" target="_blank" rel="noreferrer">
+        <a href="https://example.com" target="_blank" rel="noreferrer">
           <img src={banner1} alt="Special Offer" />
         </a>
-        <a href="YOUR_AIRTEL_AFFILIATE_LINK" target="_blank" rel="noreferrer">
+        <a href="https://example.com" target="_blank" rel="noreferrer">
           <img src={banner2} alt="Data Special Offer" />
         </a>
-        <a href="YOUR_GLO_AFFILIATE_LINK" target="_blank" rel="noreferrer">
+        <a href="https://example.com" target="_blank" rel="noreferrer">
           <img src={banner3} alt="Join Our Promo" />
         </a>
       </section>
@@ -33,13 +33,13 @@ const App: React.FC = () => {
         <h2>Latest Data Deals</h2>
         <ul>
           <li>
-            MTN 1GB - <a href="YOUR_MTN_AFFILIATE_LINK">Buy Now</a>
+            MTN 1GB - <a href="https://example.com">Buy Now</a>
           </li>
           <li>
-            Airtel 2GB - <a href="YOUR_AIRTEL_AFFILIATE_LINK">Buy Now</a>
+            Airtel 2GB - <a href="https://example.com">Buy Now</a>
           </li>
           <li>
-            Glo 500MB - <a href="YOUR_GLO_AFFILIATE_LINK">Buy Now</a>
+            Glo 500MB - <a href="https://example.com">Buy Now</a>
           </li>
         </ul>
       </section>
