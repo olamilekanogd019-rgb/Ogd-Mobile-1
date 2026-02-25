@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Flame, Clock, ExternalLink, MessageCircle } from "lucide-react";
+import { Flame, Clock, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
 
@@ -23,6 +23,13 @@ const networkColors: Record<string, string> = {
   "9mobile": "200 60% 40%",
 };
 
+const networkEmoji: Record<string, string> = {
+  MTN: "💛",
+  Airtel: "❤️",
+  Glo: "💚",
+  "9mobile": "💙",
+};
+
 const DailyDeals = () => {
   const [deals, setDeals] = useState<Deal[]>([]);
   const [loading, setLoading] = useState(true);
@@ -33,7 +40,8 @@ const DailyDeals = () => {
       .from("daily_deals")
       .select("*")
       .order("is_featured", { ascending: false })
-      .order("created_at", { ascending: false });
+      .order("created_at", { ascending: false })
+      .limit(24);
 
     if (!error && data) {
       setDeals(data as Deal[]);
@@ -43,7 +51,7 @@ const DailyDeals = () => {
         );
         const date = new Date(latest.updated_at);
         setLastUpdated(
-          date.toLocaleDateString("en-NG", { day: "numeric", month: "short", year: "numeric" }) +
+          date.toLocaleDateString("en-NG", { day: "numeric", month: "short" }) +
           " " +
           date.toLocaleTimeString("en-NG", { hour: "2-digit", minute: "2-digit" })
         );
@@ -61,74 +69,77 @@ const DailyDeals = () => {
     return () => { supabase.removeChannel(channel); };
   }, []);
 
+  // Group deals by network, max 6 per network
+  const networks = ["MTN", "Airtel", "Glo", "9mobile"];
+  const grouped = networks.reduce((acc, net) => {
+    acc[net] = deals.filter((d) => d.network === net).slice(0, 6);
+    return acc;
+  }, {} as Record<string, Deal[]>);
+
   return (
-    <section className="py-12" id="daily-deals">
+    <section className="py-6" id="daily-deals">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-destructive/10 text-destructive font-medium text-sm mb-2 animate-pulse-glow">
-            <Flame className="w-4 h-4" /> Live Deals
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-destructive/10 text-destructive font-medium text-xs animate-pulse-glow">
+              <Flame className="w-3 h-3" /> Live
+            </div>
+            <h2 className="text-lg font-bold font-heading text-foreground">
+              Today's Deals
+            </h2>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold font-heading text-foreground">
-            Today's <span className="text-primary">Cheapest Data</span>
-          </h2>
           {lastUpdated && (
-            <p className="text-xs text-muted-foreground mt-1 inline-flex items-center gap-1">
-              <Clock className="w-3 h-3" /> Updated: {lastUpdated}
-            </p>
+            <span className="text-[10px] text-muted-foreground inline-flex items-center gap-1">
+              <Clock className="w-3 h-3" /> {lastUpdated}
+            </span>
           )}
         </div>
 
         {loading ? (
-          <p className="text-center py-8 text-muted-foreground">Loading deals...</p>
+          <p className="text-center py-8 text-muted-foreground text-sm">Loading deals...</p>
         ) : (
-          <div className="space-y-2 max-w-2xl mx-auto">
-            {deals.map((deal, idx) => (
-              <motion.div
-                key={deal.id}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.04 }}
-                className="flex items-center justify-between bg-card rounded-xl px-4 py-3 card-shadow"
-              >
-                <div className="flex items-center gap-3">
-                  <span
-                    className="px-2 py-0.5 rounded text-xs font-bold"
-                    style={{
-                      background: `hsl(${networkColors[deal.network] || "0 0% 50%"} / 0.15)`,
-                      color: `hsl(${networkColors[deal.network] || "0 0% 50%"})`,
-                    }}
-                  >
-                    {deal.network}
-                  </span>
-                  <div>
-                    <p className="font-semibold text-foreground text-sm">
-                      {deal.data_amount} — <span className="text-primary">{deal.price}</span>
-                    </p>
-                    <p className="text-xs text-muted-foreground">{deal.plan_name} · {deal.validity}</p>
+          <div className="space-y-5">
+            {networks.map((net) => {
+              const netDeals = grouped[net];
+              if (!netDeals || netDeals.length === 0) return null;
+              return (
+                <div key={net}>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-sm">{networkEmoji[net]}</span>
+                    <h3
+                      className="text-sm font-bold font-heading"
+                      style={{ color: `hsl(${networkColors[net]})` }}
+                    >
+                      {net}
+                    </h3>
+                    <div className="flex-1 h-px bg-border" />
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    {netDeals.map((deal, idx) => (
+                      <motion.div
+                        key={deal.id}
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: idx * 0.03 }}
+                        className="bg-card rounded-xl p-3 card-shadow border border-border hover:border-primary/30 transition-colors"
+                      >
+                        <p className="font-bold text-foreground text-base leading-tight">{deal.data_amount}</p>
+                        <p className="text-primary font-bold text-sm">{deal.price}</p>
+                        <p className="text-[10px] text-muted-foreground mt-0.5">{deal.validity}</p>
+                        <a href={deal.buy_link} target="_blank" rel="noopener noreferrer" className="block mt-2">
+                          <Button size="sm" className="w-full gold-gradient text-foreground border-0 hover:opacity-90 text-[10px] h-7 gap-1">
+                            Buy <ExternalLink className="w-3 h-3" />
+                          </Button>
+                        </a>
+                      </motion.div>
+                    ))}
                   </div>
                 </div>
-                <a href={deal.buy_link} target="_blank" rel="noopener noreferrer">
-                  <Button size="sm" className="gold-gradient text-foreground border-0 hover:opacity-90 gap-1 text-xs h-8">
-                    Buy <ExternalLink className="w-3 h-3" />
-                  </Button>
-                </a>
-              </motion.div>
-            ))}
+              );
+            })}
           </div>
         )}
-
-        <div className="text-center mt-8">
-          <a
-            href="https://wa.me/?text=Join%20our%20cheap%20data%20alerts%20group"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-card card-shadow text-sm font-semibold text-foreground hover:text-primary transition-colors"
-          >
-            <MessageCircle className="w-4 h-4" style={{ color: "hsl(142 70% 45%)" }} />
-            📲 Join WhatsApp Alerts
-          </a>
-        </div>
       </div>
     </section>
   );
