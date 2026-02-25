@@ -1,4 +1,4 @@
-/* App.css - Exclusive OGD MOBILE */
+/* App.css - Exclusive OGD MOBILE Styling */
 
 .App {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -8,6 +8,7 @@
   padding: 0;
 }
 
+/* Header */
 .App-header {
   background: linear-gradient(135deg, #4f46e5, #8b5cf6);
   color: white;
@@ -27,6 +28,7 @@
   opacity: 0.85;
 }
 
+/* Banners Section */
 .banners {
   display: flex;
   flex-direction: column;
@@ -47,6 +49,7 @@
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
+/* Data Deals Section */
 .data-deals {
   background: white;
   padding: 20px;
@@ -86,6 +89,7 @@
   text-decoration: underline;
 }
 
+/* Footer */
 .App-footer {
   text-align: center;
   padding: 20px;
@@ -94,11 +98,7 @@
   margin-top: 40px;
 }
 
+/* Responsive Mobile Styling */
 @media (max-width: 400px) {
   .App-header h1 {
-    font-size: 1.6rem;
-  }
-  .banners, .data-deals {
-    max-width: 90%;
-  }
-}
+    font-size:
