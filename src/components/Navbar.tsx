@@ -15,9 +15,14 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
       <div className="container mx-auto px-4 flex items-center justify-between h-16">
-        <a href="/" className="flex items-center gap-2">
-          <Wifi className="w-6 h-6 text-primary" />
-          <span className="font-heading font-bold text-lg text-foreground">OGD MOBILE</span>
+        <a href="/" className="flex items-center gap-1.5">
+          <div className="w-8 h-8 rounded-lg gold-gradient flex items-center justify-center">
+            <Wifi className="w-5 h-5 text-foreground" />
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="font-heading font-extrabold text-lg tracking-tight text-foreground">OGD</span>
+            <span className="font-heading font-bold text-[9px] tracking-[0.2em] uppercase text-primary">MOBILE</span>
+          </div>
         </a>
 
         <div className="hidden md:flex items-center gap-6">

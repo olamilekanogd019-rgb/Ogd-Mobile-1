@@ -11,16 +11,18 @@ const HeroSection = () => {
           transition={{ duration: 0.4 }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 mb-1">
-            <Wifi className="w-5 h-5 text-primary-foreground" />
-            <span className="text-primary-foreground/80 font-medium text-xs">🇳🇬 Nigeria's #1 Data Deals</span>
+          <div className="inline-flex items-center gap-2 mb-2">
+            <div className="w-8 h-8 rounded-lg gold-gradient flex items-center justify-center">
+              <Wifi className="w-5 h-5 text-foreground" />
+            </div>
+            <span className="font-heading font-extrabold text-2xl text-primary-foreground tracking-tight">
+              OGD <span className="text-gradient-gold">MOBILE</span>
+            </span>
           </div>
-          <h1 className="text-xl md:text-2xl font-bold font-heading text-primary-foreground leading-tight">
-            Cheapest <span className="text-gradient-gold">Data Plans</span> Today
+          <p className="text-primary-foreground/70 text-xs mb-1">🇳🇬 Nigeria's #1 Data Deals Platform</p>
+          <h1 className="text-lg md:text-xl font-bold font-heading text-primary-foreground leading-tight">
+            Cheapest Data Plans — Updated Daily
           </h1>
-          <p className="text-primary-foreground/60 text-xs mt-1">
-            MTN · Airtel · Glo · 9mobile — Updated daily
-          </p>
         </motion.div>
       </div>
     </section>
