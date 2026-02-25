@@ -1,11 +1,11 @@
-import { Flame, Calculator, Lightbulb, Mail, Home } from "lucide-react";
+import { Flame, Calculator, Lightbulb, Home, Users } from "lucide-react";
 
 const sections = [
   { icon: Home, label: "Home", href: "#" },
   { icon: Flame, label: "Deals", href: "#daily-deals" },
+  { icon: Users, label: "Join", href: "#community" },
   { icon: Calculator, label: "Calc", href: "#calculator" },
   { icon: Lightbulb, label: "Tips", href: "#tips" },
-  { icon: Mail, label: "News", href: "#newsletter" },
 ];
 
 const BottomNav = () => {
