@@ -33,40 +33,70 @@ function App() {
         <p>3. Save money every day with exclusive deals.</p>
       </section>
 
-      {/* Affiliate Banner */}
+      {/* Banner Above Data Deals */}
       <div className="banner-section">
-        <a href="https://sponsor-website.com" target="_blank" rel="noreferrer">
-          <img src="https://via.placeholder.com/300x100.png?text=Special+Offer" alt="Special Offer" />
+        <a
+          href="https://example.com/sponsor1"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img
+            src="https://via.placeholder.com/300x100.png?text=Special+Offer"
+            alt="Special Offer"
+          />
         </a>
       </div>
 
-      {/* Data Deals / Affiliate Buttons */}
+      {/* Data Deals Section */}
       <section className="section" id="data-deals">
         <h3>Latest Data Deals</h3>
         <div className="affiliate-buttons">
-          <a href="https://affiliate.mtn.com/buy/1gb?ref=ogdmobile" target="_blank" rel="noreferrer">
+          <a
+            href="https://affiliate.mtn.com/buy/1gb?ref=ogdmobile"
+            target="_blank"
+            rel="noreferrer"
+          >
             MTN 1GB for ₦200
           </a>
-          <a href="https://affiliate.airtel.com/buy/1gb?ref=ogdmobile" target="_blank" rel="noreferrer">
+          <a
+            href="https://affiliate.airtel.com/buy/1gb?ref=ogdmobile"
+            target="_blank"
+            rel="noreferrer"
+          >
             Airtel 1GB for ₦180
           </a>
-          <a href="https://affiliate.glo.com/buy/1gb?ref=ogdmobile" target="_blank" rel="noreferrer">
+          <a
+            href="https://affiliate.glo.com/buy/1gb?ref=ogdmobile"
+            target="_blank"
+            rel="noreferrer"
+          >
             Glo 1GB for ₦150
           </a>
-          <a href="https://affiliate.9mobile.com/buy/1gb?ref=ogdmobile" target="_blank" rel="noreferrer">
+          <a
+            href="https://affiliate.9mobile.com/buy/1gb?ref=ogdmobile"
+            target="_blank"
+            rel="noreferrer"
+          >
             9mobile 1GB for ₦170
           </a>
         </div>
 
-        {/* Additional Banner inside Data Deals */}
+        {/* Banner inside Data Deals */}
         <div className="banner-section">
-          <a href="https://another-sponsor.com" target="_blank" rel="noreferrer">
-            <img src="https://via.placeholder.com/300x100.png?text=Data+Special+Offer" alt="Data Special Offer" />
+          <a
+            href="https://example.com/sponsor2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://via.placeholder.com/300x100.png?text=Data+Special+Offer"
+              alt="Data Special Offer"
+            />
           </a>
         </div>
       </section>
 
-      {/* Tips Section / Blog */}
+      {/* Tips Section */}
       <section className="section" id="tips">
         <h3>Data-Saving Tips</h3>
         <p>💡 Turn off background apps to save mobile data.</p>
@@ -74,31 +104,44 @@ function App() {
         <p>💡 Monitor your daily usage to avoid overspending.</p>
       </section>
 
-      {/* Contact / Socials */}
+      {/* Contact Section */}
       <section className="section" id="contact">
         <h3>Contact & Join</h3>
         <p>Join our community on WhatsApp and Telegram for daily deals.</p>
         <div className="affiliate-buttons">
-          <a href="https://chat.whatsapp.com/example123" target="_blank" rel="noreferrer">
+          <a
+            href="https://chat.whatsapp.com/example123"
+            target="_blank"
+            rel="noreferrer"
+          >
             Join WhatsApp
           </a>
-          <a href="https://t.me/example456" target="_blank" rel="noreferrer">
+          <a
+            href="https://t.me/example456"
+            target="_blank"
+            rel="noreferrer"
+          >
             Join Telegram
           </a>
         </div>
 
         {/* Banner in Contact */}
         <div className="banner-section">
-          <a href="https://promo-website.com" target="_blank" rel="noreferrer">
-            <img src="https://via.placeholder.com/300x100.png?text=Join+Our+Promo" alt="Join Our Promo" />
+          <a
+            href="https://example.com/sponsor3"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://via.placeholder.com/300x100.png?text=Join+Our+Promo"
+              alt="Join Our Promo"
+            />
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="footer">
-        &copy; 2026 OGD MOBILE. All rights reserved.
-      </footer>
+      <footer className="footer">&copy; 2026 OGD MOBILE. All rights reserved.</footer>
     </div>
   );
 }
