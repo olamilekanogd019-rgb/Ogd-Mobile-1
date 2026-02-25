@@ -1,104 +1,143 @@
-/* App.css - Exclusive OGD MOBILE Styling */
-
-.App {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #111;
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  background: #f9f9f9;
+  color: #111;
 }
 
 /* Header */
-.App-header {
-  background: linear-gradient(135deg, #4f46e5, #8b5cf6);
+.header {
+  background-color: #1e40af;
   color: white;
+  padding: 20px;
   text-align: center;
-  padding: 40px 20px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.App-header h1 {
-  font-size: 2rem;
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: #1e40af;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav a:hover {
+  background-color: #1e40af;
+  color: white;
+  border-radius: 6px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: #e0e7ff;
+}
+
+.hero h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #1e40af;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta a {
+  background: #1e40af;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.cta a:hover {
+  background: #374ac4;
+}
+
+/* Sections */
+.section {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.section h3 {
+  color: #1e40af;
   margin-bottom: 10px;
 }
 
-.App-header p {
-  font-size: 1rem;
-  opacity: 0.85;
+.section p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
 }
 
-/* Banners Section */
-.banners {
+/* Affiliate buttons */
+.affiliate-buttons {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  margin: 30px auto;
-  max-width: 350px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.banners img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.banners img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-/* Data Deals Section */
-.data-deals {
-  background: white;
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 350px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.data-deals h2 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  color: #4f46e5;
-}
-
-.data-deals ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.data-deals li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  font-weight: 500;
-}
-
-.data-deals li a {
-  color: #8b5cf6;
-  font-weight: 600;
+.affiliate-buttons a {
+  background: #f59e0b;
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
   text-decoration: none;
+  text-align: center;
+  transition: background 0.3s;
 }
 
-.data-deals li a:hover {
-  text-decoration: underline;
+.affiliate-buttons a:hover {
+  background: #d97706;
 }
 
 /* Footer */
-.App-footer {
+.footer {
+  background: #1e40af;
+  color: white;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
+  margin-top: 20px;
   font-size: 0.85rem;
-  color: #777;
-  margin-top: 40px;
 }
 
-/* Responsive Mobile Styling */
-@media (max-width: 400px) {
-  .App-header h1 {
-    font-size:
+/* Responsive */
+@media (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .cta a, .affiliate-buttons a {
+    width: 90%;
+  }
+}
